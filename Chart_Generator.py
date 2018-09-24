@@ -1,7 +1,5 @@
 from tkinter import *
 from tkinter import filedialog
-#from graphtestv6 import go_time
-# v4 graph_over stable
 from over_temps import go_time
 from under_temps import go_time2
 
@@ -17,13 +15,10 @@ def retrieve_entries():
     global total_wo
     global total_list
     global total_entries
-    # print(total_entries[0].get())
     if total_list != []:
         total_list = []
     for x in range(0, 10):
-     #   container = total_wo[x]
         container = total_entries[x].get()
-        # print(container)
         if container != '':
             total_list.append(container)
             total_wo_val[x].config(text='\u2713') 
@@ -37,17 +32,13 @@ def exit_now():
     root.destroy()
 
 def submit_now():
-    # global wo_num
-    # global total_wo
     global total_list
     global csv_num
     global temp_check
     check_entries = len(total_list)
     if check_entries > 0 and csv_num != '' and temp_check  == '1':
-        # print("going over baby")
         go_time(total_list, csv_num)
     elif check_entries > 0 and csv_num != '' and temp_check == '2':
-        # print("going under baby")
         go_time2(total_list, csv_num)
 
 def browsefunc():
@@ -55,9 +46,8 @@ def browsefunc():
     global csv_num
     csv_num = filename.replace('C:/Users/Mike/Python/Personal Projects/Oven Chart Generator/', '')
     print(csv_num)
-    # csv_num = filename
     pathlabel.config(text=csv_num)
-    # check_for_go()
+
 
 root = Tk()
 root.wm_title("Generate Chart")
@@ -92,7 +82,6 @@ workorder9 = StringVar()
 workorder10 = StringVar()
 profile = StringVar()
 selection = IntVar()
-# under_500 = IntVar()
 
 over = Radiobutton(root, text="OVER 500 Degrees", variable=selection, value=1, command=sel)
 under = Radiobutton(root, text="LESS THAN 500 Degrees", variable=selection, value=2, command=sel)
@@ -125,10 +114,6 @@ lab_10 = Label(root, text="WO #10:")
 
 prof = Label(root, text="Profile Type : ")
 file_sel = Label(root, text="File Selected : ")
-
-#lab2 = Label(root, text="Profile #:")
-#ent2 = Entry(root,textvariable=profile)
-#btn2 = Button(root, text="Enter", command=lambda: get_entry(ent2.get()))
 
 reset = Button(root, text="Exit", command=exit_now)
 submit = Button(root, text="Submit", command=submit_now)
@@ -170,9 +155,6 @@ wo_val10.grid(row=9, column=2)
 prof.grid(row=11,column=0)
 over.grid(row=11, column=2)
 under.grid(row=11, column=1)
-#lab2.grid(row=1,column=0)
-#ent2.grid(row=1,column=1)
-#btn2.grid(row=1,column=2)
 browsebutton.grid(row=12,column=0)
 file_sel.grid(row=13,column=0)
 pathlabel.grid(row=13,column=1)
