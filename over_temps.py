@@ -73,13 +73,10 @@ def go_time(total_list, csv_num):
                        tickwidth=3,
                        tickvals=[10 * x for x in range(0, 101)],
                        ticktext=my_tick,
-                      # showticklabels= False,
                        tickfont=dict(
                         family='Arial, sans-serif',
                         size = 12,
                         color='black'),
-                        #tick0=0,
-                        #dtick=20,
                        tickcolor='#000',
                        gridcolor='#C0C0C0',
                        linecolor='black',
@@ -88,17 +85,11 @@ def go_time(total_list, csv_num):
                        ),
                    xaxis=dict (
                        title='TIME (24-HOUR)',
-                      # titlefont=dict(
-                       #    size = 12
-                        #   ),
                        ticks='outside',
                        tickfont=dict(family='Arial, sans-serif', size = 11, color = 'black'),
                        tickwidth=3,
                        ticklen=7.5,
-                       # tick0=df5,
-                       # dtick=60,
                        tickvals= here_it_is,
-                      # tickvals= [df4[x * 60] for x in range(0, div + 1)] + [df4[(60 * div) + mod]],
                        gridcolor='#C0C0C0',
                        linecolor='black',
                        linewidth=2,
