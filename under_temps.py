@@ -72,8 +72,6 @@ def go_time2(total_list, csv_num):
                         family='Arial, sans-serif',
                         size = 12,
                         color='black'),
-                        #tick0=0,
-                        #dtick=20,
                        tickcolor='#000',
                        gridcolor='#A0A0A0',
                        linecolor = 'black',
@@ -82,9 +80,6 @@ def go_time2(total_list, csv_num):
                        ),
                    xaxis=dict (
                        title='TIME (24-HOUR)',
-                       # titlefont=dict(
-                       #     size = 12
-                       #     ),
                        tickwidth=3,
                        ticks='outside',
                        ticklen=7.5,
